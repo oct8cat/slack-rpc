@@ -19,21 +19,24 @@ describe('SlackRPC', function () {
         })
     })
     describe('POST /', function () {
-        it('Should deny no-trigger-word requests', function (done) {
+        it('should deny invalid content types', function (done) {
+            agent.post('/').type('json').expect(415, done)
+        })
+        it('should deny requests not containing trigger words', function (done) {
             agent.post('/').type('form').send(fixtures.requests[0]).expect(200, function (err, res) {
                 if (err) { done(err); return }
                 res.body.text.should.match('Wat?')
                 done()
             })
         })
-        it('Should deny unknown-trigger-word requests', function (done) {
+        it('should deny requests containing unknown trigger words', function (done) {
             agent.post('/').type('form').send(fixtures.requests[1]).expect(200, function (err, res) {
                 if (err) { done(err); return }
                 res.body.text.should.match('Wat do with "wat do"?')
                 done()
             })
         })
-        it('Should execute valid requests', function (done) {
+        it('should execute valid requests', function (done) {
             agent.post('/').type('form').send(fixtures.requests[2]).expect(200, function (err, res) {
                 if (err) { done(err); return }
                 res.body.text.should.match(new RegExp(process.cwd()))
