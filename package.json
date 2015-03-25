@@ -22,7 +22,8 @@
     "supertest": "^0.15.0"
   },
   "dependencies": {
-    "lodash": "^3.5.0"
+    "lodash": "^3.5.0",
+    "qs": "^2.4.1"
   },
   "bin": {
     "slack-rpc": "bin/slack-rpc.js"

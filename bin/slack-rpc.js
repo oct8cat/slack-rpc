@@ -58,7 +58,7 @@ if (require.main === module) {
         return
     }
 
-    module.exports(function (err, server) {
+    module.exports(procedures, function (err, server) {
         if (err) { console.error(err); process.exit(1); return }
         console.log('Now running on ' + PORT)
     })
