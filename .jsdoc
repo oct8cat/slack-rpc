@@ -1,4 +1,7 @@
 {
+    "templates": {
+        "theme": "united"
+    },
     "plugins": [
         "plugins/markdown"
     ]

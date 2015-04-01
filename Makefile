@@ -20,5 +20,5 @@ jshint:
 .PHONY: jshint
 
 jsdoc:
-	$(JSDOC) -r -c $(JSDOC_OPTS) -d $(DOC_DIR) $(LIB_DIR)
+	$(JSDOC) -r -c $(JSDOC_OPTS) -t node_modules/ink-docstrap/template -d $(DOC_DIR) $(LIB_DIR)
 .PHONY: jsdoc

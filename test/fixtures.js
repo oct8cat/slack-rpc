@@ -2,22 +2,21 @@
 
 module.exports = {
     requests: [
-        // No trigger word
         {
-            token: 'XXXXXXXXXXXXXXXXXX',
+            trigger_word: 'test',
+            text: 'test noop'
         },
-        // Not registered procedure
         {
-            token: 'XXXXXXXXXXXXXXXXXX',
-            trigger_word: 'wat do'
-        },
-        // Registered procedure
-        {
-            token: 'XXXXXXXXXXXXXXXXXX',
-            trigger_word: 'show me cwd'
-        },
+            trigger_word: 'test',
+            text: 'test pwd'
+        }
     ],
     procedures: [
-        {name: 'show me cwd', cmd: 'pwd'}
+        {name: 'pwd', cmd: 'pwd', slack: {
+            host: 'http://localhost:3001',
+            path: '/',
+            channel: '#bot',
+            username: 'bot'
+        }}
     ]
 }

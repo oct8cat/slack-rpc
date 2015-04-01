@@ -16,6 +16,8 @@
   },
   "homepage": "https://github.com/oct8cat/slack-rpc",
   "devDependencies": {
+    "ink-docstrap": "^0.5.2",
+    "jsdoc": "^3.3.0-beta3",
     "jshint": "^2.6.3",
     "mocha": "^2.2.1",
     "should": "^5.2.0",

@@ -37,11 +37,6 @@ describe('SlackRPC', function () {
             beforeEach(function () {
                 procedures = new SlackRPC.ProcedureStore()
             })
-            it('should deny invalid names', function () {
-                should.throws(function () {
-                    procedures.get()
-                }, '`name` should be a string')
-            })
             it('should retrieve `add`ed procedures', function () {
                 var o = {name: 'proc1', cmd: 'pwd'}
                 should.not.exist(procedures.get(o.name))
